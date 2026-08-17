@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 100.00 100.00"
+   width="100.00"
+   height="100.00"
+   role="img"
+   aria-label="aro"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>aro</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="4.3"
+     inkscape:cx="96.729129"
+     inkscape:cy="42.796717"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <title
+     id="title2">aro</title>
+  <rect
+     width="100.0"
+     height="100.0"
+     rx="22"
+     fill="#2A1B33"
+     id="rect4" />
+  <g
+     id="g895"
+     transform="matrix(1.0209181,0,0,1.0209181,-115.96663,-52.337739)">
+    <g
+       id="g851"
+       transform="matrix(1.0106891,0,0.20673186,1.0106891,112.63588,50.104929)">
+      <rect
+         x="14"
+         y="6"
+         width="10"
+         height="22"
+         rx="3"
+         fill="#ff2e7e"
+         id="rect4-4" />
+      <rect
+         x="6"
+         y="24"
+         width="26"
+         height="70"
+         rx="8"
+         fill="#ff2e7e"
+         id="rect6-4" />
+    </g>
+    <path
+       style="fill:#ff2e7e;fill-opacity:1;stroke:none;stroke-width:0.303207;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 192.05737,138.70513 c -0.23798,0.67182 -1.31557,2.94668 -2.68824,3.61805 l -1.46882,1.76949 c -0.70147,1.0379 -1.24648,0.93965 -1.24648,0.93965 l -18.63952,-0.005 c 0,0 -0.6614,0.1575 -0.9856,-0.78951 l -0.57001,-2.00991 c -1.28067,-1.6589 -0.99743,-2.57852 -0.78121,-3.52982 l 5.66164,-21.03416 v 0 l 5.66165,-21.034149 c 0.2959,-0.951303 0.50773,-1.870924 2.68142,-3.529823 l 1.652,-2.009912 c 0.83401,-0.947014 1.41061,-0.789508 1.41061,-0.789508 l 18.64231,-0.0052 c 0,0 0.5979,-0.09825 0.74063,0.939647 l 0.51625,1.769498 c 1.01125,0.671371 0.86423,2.946222 0.74054,3.618042 l -5.66359,21.041355 z"
+       id="path853-4"
+       sodipodi:nodetypes="cccccccccccccccccccc" />
+    <path
+       style="fill:none;stroke:#ff2e7e;stroke-width:2.703;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 144.95817,143.70787 h 38.39271"
+       id="path898" />
+  </g>
+</svg>
