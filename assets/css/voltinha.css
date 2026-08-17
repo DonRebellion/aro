@@ -124,7 +124,7 @@ p:last-child { margin-bottom: 0; }
 .botao svg { width: 20px; height: 20px; flex: 0 0 auto; }
 /* magenta com texto ameixa: 4,6:1. Nunca texto branco sobre magenta. */
 .botao--principal { background: var(--magenta); color: var(--branco) !important; }
-.botao--principal:hover { background: #ff4f92; }
+.botao--principal:hover { background: #167983; }
 .botao--linha { background: transparent; color: var(--ameixa); border-color: rgba(42,27,51,.28); }
 .botao--linha:hover { background: rgba(42,27,51,.06); }
 .escuro .botao--linha { color: var(--areia); border-color: rgba(244,235,221,.35); }
