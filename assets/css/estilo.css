@@ -64,6 +64,19 @@
   --largura-texto: 62ch;
 
   --sombra: 0 1px 2px rgba(42,27,51,.06), 0 14px 40px -18px rgba(42,27,51,.28);
+    
+  /* slider */
+    --aro-slide-width: 300px;
+    --aro-slide-height: 200px;
+    --aro-animation-speed: 40s;
+    
+    @media (max-width: 768px) {
+        :root {
+            --aro-slide-width: 180px;
+            --aro-slide-height: 150px;
+        }
+    }
+    
 }
 
 /* registo escuro — qualquer bloco sobre ameixa herda estas variáveis */
@@ -461,6 +474,86 @@ figure { margin: 0; }
 .galeria { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
 @media (max-width: 640px) { .galeria { grid-template-columns: 1fr; } }
 
+
+/* --------- slider ---------- */
+.aro-slider {
+    height: calc(var(--aro-slide-height) + 60px);
+    margin: auto;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.aro-slider-track {
+    display: flex;
+    width: calc(var(--aro-slide-width) * var(--total-slides, 16));
+    /* Fixed variable name here */
+    animation: scroll var(--aro-animation-speed) linear infinite;
+}
+
+.aro-slider-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-1 * var(--aro-slide-width) * var(--half-slides, 8)));
+    }
+}
+
+.aro-slide {
+    height: var(--aro-slide-height);
+    width: var(--aro-slide-width);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    perspective: 100px;
+}
+
+.aro-slide:hover img {
+    transform: translateY(-12px) scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.aro-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    border-radius: 15px;
+}
+
+.aro-slider::before,
+.aro-slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.aro-slider::before {
+    left: 0;
+    top: 0;
+}
+
+.aro-slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+
 /* ---------- citação ---------- */
 
 .citacao { margin: 0; border-left: 3px solid var(--magenta); padding-left: 1.4rem; max-width: 52ch; }
@@ -760,3 +853,5 @@ figure { margin: 0; }
   h1, h2, h3, .chamada h2 { color: #000 !important; }
   a { color: #000; text-decoration: none; }
 }
+
+

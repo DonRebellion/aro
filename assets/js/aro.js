@@ -86,3 +86,24 @@
 
   alvos.forEach(function (el) { observador.observe(el); });
 })();
+
+/* Slider */
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".aro-slider-track");
+    if (!track) return; // Exits safely if there is no slider on this specific page
+    
+    const slides = Array.from(track.children);
+    
+    // 1. Automatically duplicate your slides so the infinite loop is seamless
+    slides.forEach(slide => {
+      const clone = slide.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    // 2. Count total slides (original + clones) and set CSS custom properties dynamically
+    const totalSlides = track.children.length;
+    const originalCount = totalSlides / 2;
+
+    track.style.setProperty("--total-slides", totalSlides);
+    track.style.setProperty("--half-slides", originalCount);
+});
