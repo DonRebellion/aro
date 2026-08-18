@@ -1,1 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.00 100.00" width="100.00" height="100.00" role="img" aria-label="aro"><title>aro</title><rect width="100.0" height="100.0" rx="22" fill="#2A1B33"/><rect x="31.59" y="14.00" width="8.18" height="18.00" rx="2.45" fill="#FF2E7E"/><rect x="25.05" y="28.73" width="21.27" height="57.27" rx="6.55" fill="#FF2E7E"/><rect x="53.68" y="41.82" width="21.27" height="44.18" rx="5.73" fill="#FF2E7E"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 100 100"
+   width="100"
+   height="100"
+   role="img"
+   aria-label="aro"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata24">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>aro</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     id="namedview20"
+     showgrid="false"
+     inkscape:zoom="4.3"
+     inkscape:cx="37.879392"
+     inkscape:cy="49.663235"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg18" />
+  <title
+     id="title2">aro</title>
+  <rect
+     width="100"
+     height="100"
+     rx="22"
+     fill="#2A1B33"
+     id="rect4" />
+  <g
+     transform="matrix(1.0118892,0,0,1.0118892,-0.57553203,3.2195037)"
+     id="g16">
+    <g
+       fill="#ff2e7e"
+       id="g12">
+      <rect
+         x="35.5"
+         y="14"
+         width="5"
+         height="9"
+         rx="2.5"
+         id="rect6" />
+      <rect
+         x="31"
+         y="20"
+         width="14"
+         height="24"
+         rx="5"
+         id="rect8" />
+      <rect
+         x="55"
+         y="25"
+         width="14"
+         height="19"
+         rx="5"
+         id="rect10" />
+    </g>
+    <path
+       d="M 23,54 V 64 A 10,10 0 0 0 33,74 H 67 A 10,10 0 0 0 77,64 V 54"
+       fill="none"
+       stroke="#ff2e7e"
+       stroke-width="9"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path14" />
+  </g>
+</svg>
