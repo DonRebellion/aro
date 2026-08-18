@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — aro</title>
+<meta name="description" content="Fale connosco sobre o aro. Câmaras, juntas de freguesia, imprensa e residentes.">
+<meta name="theme-color" content="#2A1B33">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Contacto — aro">
+<meta property="og:description" content="Fale connosco sobre o aro. Câmaras, juntas de freguesia, imprensa e residentes.">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
+<link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+
+<a class="salta" href="#conteudo">Saltar para o conteúdo</a>
+
+<header class="cabecalho">
+  <div class="envolve cabecalho__interior">
+    <a class="marca" href="index.html"><img src="assets/logo/aro-logo-sand.svg" alt="aro" width="96" height="39"></a>
+
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="navegacao-principal">
+      <span class="menu-botao__barras" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+
+    <nav class="navegacao" id="navegacao-principal" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html#impacto">Impacto</a></li>
+        <li><a href="index.html#como-funciona">Como funciona</a></li>
+        <li><a href="pedir-na-sua-cidade.html">Peça na sua cidade</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <section class="topo">
+    <div class="envolve texto">
+      <span class="sobrancelha">Contacto</span>
+      <h1>Falemos.</h1>
+      <p class="entrada">
+        Câmaras, juntas de freguesia, imprensa ou residentes — respondemos a todas
+        as mensagens, normalmente em 48 horas.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccao seccao--areia">
+    <div class="envolve">
+      <form class="formulario aparece" action="https://formspree.io/f/SUBSTITUIR_PELO_SEU_ID" method="POST">
+        <input type="hidden" name="_subject" value="Novo contacto via arotec.pt">
+
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" required>
+        </div>
+
+        <div class="campo">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div class="campo">
+          <label for="perfil">Escrevo em nome de</label>
+          <select id="perfil" name="perfil">
+            <option>Câmara municipal</option>
+            <option>Junta de freguesia</option>
+            <option>Empresa municipal / higiene urbana</option>
+            <option>Instituição social</option>
+            <option>Imprensa</option>
+            <option>Residente</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" required
+                    placeholder="Onde está o problema? Que zonas, que papeleiras, que queixas."></textarea>
+        </div>
+
+        <div class="botoes" style="margin-top:.25rem">
+          <button class="botao botao--acento" type="submit">Enviar</button>
+        </div>
+
+        <p class="nota">
+          Os dados são usados apenas para responder ao seu contacto e não são
+          partilhados com terceiros.
+        </p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="envolve">
+    <div class="rodape__grelha">
+      <div>
+        <a class="marca" href="index.html"><img src="assets/logo/aro-logo-sand.svg" alt="aro" width="96" height="39"></a>
+        <p style="max-width:30ch">Ninguém devia ter de revirar o lixo. Um suporte em aço inox para as papeleiras que já existem.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html#impacto">Impacto</a></li>
+          <li><a href="index.html#como-funciona">Como funciona</a></li>
+          <li><a href="pedir-na-sua-cidade.html">Peça na sua cidade</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="contacto.html">Formulário de contacto</a></li>
+          <li>Portugal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape__base">
+      <span>© 2026 aro</span>
+      <span>ARO-100 · protótipo em aço inox</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/aro.js" defer></script>
+</body>
+</html>
