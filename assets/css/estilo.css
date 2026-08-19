@@ -178,7 +178,7 @@ strong { font-weight: 700; }
 .seccao--branca { --fundo: var(--branco); --superficie: var(--areia); }
 
 .seccao--parallax {
-  height: 400px; 
+  height: 200px; 
   background-image: url('../img/olheiro.webp');
   background-attachment: fixed;
   background-position: center;
