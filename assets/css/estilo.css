@@ -184,7 +184,6 @@ strong { font-weight: 700; }
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
 }
 
 .texto { max-width: var(--largura-texto); }
