@@ -188,6 +188,7 @@ strong { font-weight: 700; }
   max-width: var(--largura);
   margin-top: 2.25rem;
   border-radius: var(--raio);
+  margin-inline: auto;
 }
 
 .texto { max-width: var(--largura-texto); }
