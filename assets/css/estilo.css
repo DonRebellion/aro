@@ -189,6 +189,11 @@ strong { font-weight: 700; }
   margin-top: 2.25rem;
   border-radius: var(--raio);
   margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .texto { max-width: var(--largura-texto); }
