@@ -196,12 +196,6 @@ strong { font-weight: 700; }
   align-items: center;
   text-align: center;
 }
-@media (max-width: 768px) {
-  .seccao--parallax {
-    background-attachment: scroll;
-  }
-}
-
 
 .texto { max-width: var(--largura-texto); }
 .envolve.texto { max-width: var(--largura); }
