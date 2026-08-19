@@ -177,6 +177,16 @@ strong { font-weight: 700; }
 .seccao--fundo  { --fundo: var(--areia-fundo); }
 .seccao--branca { --fundo: var(--branco); --superficie: var(--areia); }
 
+.seccao--parallax {
+  height: 400px; 
+  background-image: url('assets/olheiro.webp');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
 .texto { max-width: var(--largura-texto); }
 .envolve.texto { max-width: var(--largura); }
 .envolve.texto > * { max-width: var(--largura-texto); }
@@ -697,7 +707,19 @@ figure { margin: 0; }
   gap: 1rem; padding-top: 1.5rem;
   font-size: .8125rem; color: var(--pedra);
 }
-
+.rodape__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adds space between the items */
+  list-style: none; /* Optional: removes default bullet points */
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .rodape__legal {
+    flex-direction: row;
+    gap: 20px; /* Adjust spacing between items on PC */
+  }
+}
 /* =========================================================
    ANIMAÇÃO
    Uma curva só (--suave) e uma distância só, para tudo se
