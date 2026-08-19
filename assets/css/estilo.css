@@ -178,8 +178,12 @@ strong { font-weight: 700; }
 .seccao--branca { --fundo: var(--branco); --superficie: var(--areia); }
 
 .seccao--parallax {
-  position: relative;
   height: 200px; 
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url('../img/olheiro.webp');
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border: 1px solid var(--borda);
   width: 100%;
   max-width: var(--largura);
@@ -191,18 +195,6 @@ strong { font-weight: 700; }
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden; /* Keeps the background trapped inside the border-radius */
-}
-/* Creates the smooth parallax layer without the mobile resize glitch */
-.seccao--parallax::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url('../img/olheiro.webp');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
 }
 
 .texto { max-width: var(--largura-texto); }
