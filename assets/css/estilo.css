@@ -184,6 +184,7 @@ strong { font-weight: 700; }
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 1px solid var(--areia);
   width: 100%;
   max-width: var(--largura);
   margin-top: 2.25rem;
