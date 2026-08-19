@@ -179,7 +179,7 @@ strong { font-weight: 700; }
 
 .seccao--parallax {
   height: 400px; 
-  background-image: url('assets/olheiro.webp');
+  background-image: url('assets/img/olheiro.webp');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
