@@ -184,7 +184,7 @@ strong { font-weight: 700; }
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border: 1px solid rgba(255, 46, 126, .38);
+  border: 1px solid var(--borda);
   width: 100%;
   max-width: var(--largura);
   margin-top: 2.25rem;
