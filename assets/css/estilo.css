@@ -184,6 +184,10 @@ strong { font-weight: 700; }
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  max-width: var(--largura);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
 }
 
 .texto { max-width: var(--largura-texto); }
