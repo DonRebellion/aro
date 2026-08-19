@@ -179,7 +179,7 @@ strong { font-weight: 700; }
 
 .seccao--parallax {
   height: 200px; 
-  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), url('../img/olheiro.webp');
+  background-image: url('../img/olheiro.webp');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
