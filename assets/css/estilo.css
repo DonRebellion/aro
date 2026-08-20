@@ -717,39 +717,48 @@ figure { margin: 0; }
   gap: 1rem; padding-top: 1.5rem;
   font-size: .8125rem; color: var(--pedra);
 }
-.rodape__legal, .footer_nav {
+/* footer */
+.rodape__legal {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Adds space between the items */
-  list-style: none; /* Optional: removes default bullet points */
+  gap: 10px;
+  list-style: none;
   padding: 0;
 }
-..footer_nav {
+.footer_nav {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Mobile: stacked */
+  flex-direction: column; 
+  align-items: flex-start;
   gap: 10px;
 }
+.footer_nav li:not(:last-child)::after {
+   content: "|";
+   margin-left: 15px;
+   opacity: 0.5;
+}
 
-/* Tablet: 2 columns, 2 rows */
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 759px) {
   .footer_nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (min-width: 760px) {
   .rodape__legal {
     flex-direction: row;
-    gap: 20px; /* Adjust spacing between items on PC */
+    gap: 20px;
   }
-}
-/* Desktop: 4 columns side by side */
-@media (min-width: 760px) {
+  
   .footer_nav {
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
   }
 }
 
