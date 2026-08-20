@@ -67,40 +67,64 @@
 
   /* --- revelar blocos ao entrar no ecrã --- */
   var alvos = document.querySelectorAll('.aparece');
-  if (!alvos.length) return;
-
   var reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduzido || !('IntersectionObserver' in window)) {
+  
+  if (alvos.length && !reduzido && ('IntersectionObserver' in window)) {
+    var observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visivel');
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    alvos.forEach(function (el) { observador.observe(el); });
+  } else if (alvos.length) {
     alvos.forEach(function (el) { el.classList.add('visivel'); });
-    return;
   }
 
-  var observador = new IntersectionObserver(function (entradas) {
-    entradas.forEach(function (entrada) {
-      if (entrada.isIntersecting) {
-        entrada.target.classList.add('visivel');
-        observador.unobserve(entrada.target);
-      }
-    });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  /* --- destacar âncoras no menu ao fazer scroll --- */
+  var secoesComId = document.querySelectorAll('section[id]');
+  var linksMenu = document.querySelectorAll('.navegacao a');
 
-  alvos.forEach(function (el) { observador.observe(el); });
+  if (secoesComId.length && linksMenu.length && ('IntersectionObserver' in window)) {
+    var observadorMenu = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          var id = entrada.target.getAttribute('id');
+          
+          linksMenu.forEach(function (a) {
+            a.classList.remove('is-active');
+          });
+
+          var linkAtivo = document.querySelector('.navegacao a[href="#' + id + '"]');
+          if (linkAtivo) {
+            linkAtivo.classList.add('is-active');
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
+    secoesComId.forEach(function (secao) {
+      observadorMenu.observe(secao);
+    });
+  }
+
 })();
 
 /* Slider */
 document.addEventListener("DOMContentLoaded", () => {
     const track = document.querySelector(".aro-slider-track");
-    if (!track) return; // Exits safely if there is no slider on this specific page
+    if (!track) return; 
     
     const slides = Array.from(track.children);
     
-    // 1. Automatically duplicate your slides so the infinite loop is seamless
     slides.forEach(slide => {
       const clone = slide.cloneNode(true);
       track.appendChild(clone);
     });
 
-    // 2. Count total slides (original + clones) and set CSS custom properties dynamically
     const totalSlides = track.children.length;
     const originalCount = totalSlides / 2;
 
