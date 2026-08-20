@@ -87,17 +87,26 @@
   /* --- destacar âncoras no menu ao fazer scroll e clique --- */
   var secoesComId = document.querySelectorAll('section[id]');
   var linksMenu = document.querySelectorAll('.navegacao a');
+  var bloqueioScroll = false;
+  var temporizadorBloqueio;
 
   if (linksMenu.length) {
     linksMenu.forEach(function (link) {
       var href = link.getAttribute('href');
-      // Ativa se for um link de âncora (suporta index.html#impacto ou #impacto)
       if (href && href.indexOf('#') !== -1) {
         link.addEventListener('click', function () {
+          bloqueioScroll = true; // Pausa o observer de scroll temporariamente
+          clearTimeout(temporizadorBloqueio);
+
           linksMenu.forEach(function (a) {
             a.classList.remove('is-active');
           });
           this.classList.add('is-active');
+
+          // Liberta o observer após a animação de scroll terminar (1000ms)
+          temporizadorBloqueio = setTimeout(function () {
+            bloqueioScroll = false;
+          }, 1000);
         });
       }
     });
@@ -105,6 +114,8 @@
 
   if (secoesComId.length && linksMenu.length && ('IntersectionObserver' in window)) {
     var observadorMenu = new IntersectionObserver(function (entradas) {
+      if (bloqueioScroll) return; // Ignora eventos de scroll se o utilizador acabou de clicar
+
       entradas.forEach(function (entrada) {
         if (entrada.isIntersecting) {
           var id = entrada.target.getAttribute('id');
@@ -113,7 +124,6 @@
             a.classList.remove('is-active');
           });
 
-          // Procura o link contendo o ID correspondente (funciona com caminhos relativos como index.html#id)
           var linkAtivo = document.querySelector('.navegacao a[href*="#' + id + '"]');
           if (linkAtivo) {
             linkAtivo.classList.add('is-active');
