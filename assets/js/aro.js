@@ -84,17 +84,45 @@
     alvos.forEach(function (el) { el.classList.add('visivel'); });
   }
 
-  /* --- destacar âncoras no menu ao parar o scroll --- */
+  /* --- gestão de cliques em âncoras e destaque no menu --- */
   var linksMenu = document.querySelectorAll('.navegacao a');
   var secoesComId = document.querySelectorAll('section[id]');
 
+  if (linksMenu.length) {
+    linksMenu.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (href && href.indexOf('#') !== -1) {
+        link.addEventListener('click', function (e) {
+          var partes = href.split('#');
+          var caminhoAlvo = partes[0]; // ex: "index.html" ou vazio
+          var idAlvo = partes[1];      // ex: "impacto"
+          
+          var secao = document.getElementById(idAlvo);
+          var paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
+          var mesmaPagina = (caminhoAlvo === '' || caminhoAlvo === paginaAtual);
+
+          // Se estivermos na mesma página e a secção existir, faz scroll suave sem refresh
+          if (mesmaPagina && secao) {
+            e.preventDefault();
+            secao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            if (history.pushState) {
+              history.pushState(null, null, '#' + idAlvo);
+            }
+          }
+          // Caso contrário, o browser prossegue normalmente para outra página
+        });
+      }
+    });
+  }
+
+  // Monitorizador de scroll otimizado (sem IntersectionObserver para evitar conflitos de clique)
   if (secoesComId.length && linksMenu.length) {
     var scrollTimer = null;
 
     window.addEventListener('scroll', function () {
       if (scrollTimer) clearTimeout(scrollTimer);
 
-      // Recalcula o link ativo apenas 100ms *após* o scroll/animação parar por completo
       scrollTimer = setTimeout(function () {
         var scrollPos = window.scrollY + window.innerHeight / 3;
 
