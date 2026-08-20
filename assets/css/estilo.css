@@ -704,7 +704,8 @@ figure { margin: 0; }
 }
 @media (max-width: 720px) { 
    .rodape__grelha { 
-       grid-template-columns: 1fr; gap: 1.5rem; 
+       grid-template-columns: 1fr; gap: 1.5rem;
+       justify-content: flex-start; 
    } 
 }
 .rodape ul { list-style: none; margin: 0; padding: 0; }
