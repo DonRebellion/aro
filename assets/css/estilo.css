@@ -702,10 +702,10 @@ figure { margin: 0; }
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(244, 235, 221, .12);
 }
-@media (max-width: 720px) { 
+@media (max-width: 719px) { 
    .rodape__grelha { 
-       grid-template-columns: 1fr; gap: 1.5rem;
-       justify-content: flex-start; 
+       grid-template-columns: 1fr; 
+       gap: 1.5rem;
    } 
 }
 .rodape ul { list-style: none; margin: 0; padding: 0; }
@@ -736,6 +736,7 @@ figure { margin: 0; }
   .footer_nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+      
   }
 }
 @media (min-width: 600px) {
@@ -745,7 +746,7 @@ figure { margin: 0; }
     opacity: 0.5;
   }
 }
-@media (min-width: 721px) {
+@media (min-width: 720px) {
   .footer_nav {
     display: flex;
     flex-direction: row;
