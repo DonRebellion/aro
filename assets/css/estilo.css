@@ -707,12 +707,6 @@ figure { margin: 0; }
        grid-template-columns: 1fr; gap: 1.5rem; 
    } 
 }
-.rodape h4 {
-  color: var(--tinta);
-  font-size: .8125rem; font-weight: 700;
-  letter-spacing: .14em; text-transform: uppercase;
-  margin: 0 0 .85rem;
-}
 .rodape ul { list-style: none; margin: 0; padding: 0; }
 .rodape li { margin-bottom: .5rem; }
 .rodape .marca { margin-bottom: .9rem; }
@@ -721,7 +715,6 @@ figure { margin: 0; }
   gap: 1rem; padding-top: 1.5rem;
   font-size: .8125rem; color: var(--pedra);
 }
-/* footer */
 .rodape__legal {
   display: flex;
   flex-direction: column;
@@ -760,6 +753,9 @@ figure { margin: 0; }
     align-items: center;
     gap: 15px;
   }
+   .rodape__grelha { 
+       align-items: center;
+   } 
 }
 @media (min-width: 335px) {
   .rodape__legal {
