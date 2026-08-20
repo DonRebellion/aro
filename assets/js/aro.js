@@ -87,26 +87,26 @@
   /* --- destacar âncoras no menu ao fazer scroll e clique --- */
   var secoesComId = document.querySelectorAll('section[id]');
   var linksMenu = document.querySelectorAll('.navegacao a');
-  var bloqueioScroll = false;
-  var temporizadorBloqueio;
+  var timeoutId = null;
 
   if (linksMenu.length) {
     linksMenu.forEach(function (link) {
       var href = link.getAttribute('href');
       if (href && href.indexOf('#') !== -1) {
         link.addEventListener('click', function () {
-          bloqueioScroll = true; // Pausa o observer de scroll temporariamente
-          clearTimeout(temporizadorBloqueio);
-
+          // 1. Remove active from all and add strictly to the clicked one
           linksMenu.forEach(function (a) {
             a.classList.remove('is-active');
           });
           this.classList.add('is-active');
 
-          // Liberta o observer após a animação de scroll terminar (1000ms)
-          temporizadorBloqueio = setTimeout(function () {
-            bloqueioScroll = false;
-          }, 1000);
+          // 2. Lock out the observer completely during the smooth scroll transition
+          if (timeoutId) clearTimeout(timeoutId);
+          window.__isScrollingToAnchor = true;
+          
+          timeoutId = setTimeout(function () {
+            window.__isScrollingToAnchor = false;
+          }, 900); // matches typical smooth scroll duration
         });
       }
     });
@@ -114,7 +114,7 @@
 
   if (secoesComId.length && linksMenu.length && ('IntersectionObserver' in window)) {
     var observadorMenu = new IntersectionObserver(function (entradas) {
-      if (bloqueioScroll) return; // Ignora eventos de scroll se o utilizador acabou de clicar
+      if (window.__isScrollingToAnchor) return; // Ignere if user just clicked an anchor
 
       entradas.forEach(function (entrada) {
         if (entrada.isIntersecting) {
@@ -130,7 +130,7 @@
           }
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     secoesComId.forEach(function (secao) {
       observadorMenu.observe(secao);
