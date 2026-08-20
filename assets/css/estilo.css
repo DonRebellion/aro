@@ -177,46 +177,24 @@ strong { font-weight: 700; }
 .seccao--fundo  { --fundo: var(--areia-fundo); }
 .seccao--branca { --fundo: var(--branco); --superficie: var(--areia); }
 
-/* parallax section */
 .seccao--parallax {
-  position: relative;
-  height: 200px;
+  height: 200px; 
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url('../img/olheiro.webp');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: 1px solid var(--borda);
   width: 100%;
   max-width: var(--largura);
   margin-top: 2.25rem;
-  margin-inline: auto;
-  border: 1px solid var(--borda);
   border-radius: var(--raio);
-  overflow: hidden;
-}
-.parallax__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center; 
-  background-attachment: fixed;
-  z-index: 1;
-}
-.seccao--parallax::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
-  z-index: 2;
-}
-.parallax__content {
-  position: relative;
-  height: 100%;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 1rem;
-  z-index: 3;
 }
 
 .texto { max-width: var(--largura-texto); }
