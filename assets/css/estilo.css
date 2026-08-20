@@ -267,7 +267,7 @@ strong { font-weight: 700; }
 .navegacao a[aria-current="page"],
 .navegacao a.is-active {
     color: var(--areia);
-    border-bottom: 2px solid var(--magenta);
+    border-color: var(--magenta);
 }
 
 .menu-botao {
