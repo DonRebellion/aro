@@ -732,21 +732,21 @@ figure { margin: 0; }
   align-items: flex-start;
   gap: 10px;
 }
-@media (min-width: 500px) and (max-width: 600px) {
+@media (min-width: 550px) and (max-width: 600px) {
   .footer_nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
       
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 550px) {
   .footer_nav li:not(:last-child)::after {
     content: "|";
     margin-left: 15px;
     opacity: 0.5;
   }
 }
-@media (min-width: 601px) and (max-width: 719px) {
+@media (min-width: 551px) and (max-width: 719px) {
   .footer_nav {
     display: flex;
     flex-direction: row;
@@ -768,7 +768,7 @@ figure { margin: 0; }
        align-items: center;
    } 
 }
-@media (min-width: 335px) {
+@media (min-width: 330px) {
   .rodape__legal {
     flex-direction: row;
     gap: 20px;
