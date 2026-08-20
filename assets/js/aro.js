@@ -84,60 +84,53 @@
     alvos.forEach(function (el) { el.classList.add('visivel'); });
   }
 
-  /* --- destacar âncoras no menu ao fazer scroll e clique --- */
-  var secoesComId = document.querySelectorAll('section[id]');
+  /* --- destacar âncoras no menu (Sem IntersectionObserver para evitar flashes) --- */
   var linksMenu = document.querySelectorAll('.navegacao a');
-  var isManualScrolling = false;
-  var scrollTimeout = null;
 
   if (linksMenu.length) {
     linksMenu.forEach(function (link) {
       var href = link.getAttribute('href');
       if (href && href.indexOf('#') !== -1) {
         link.addEventListener('click', function () {
-          // Bloqueia imediatamente o observer de scroll
-          isManualScrolling = true;
-          if (scrollTimeout) clearTimeout(scrollTimeout);
-
-          // Aplica o active de forma estrita apenas ao link clicado
+          // Destaca imediatamente o link clicado sem esperar pelo scroll
           linksMenu.forEach(function (a) {
             a.classList.remove('is-active');
           });
           this.classList.add('is-active');
-
-          // Liberta o bloqueio após a animação de scroll terminar
-          scrollTimeout = setTimeout(function () {
-            isManualScrolling = false;
-          }, 1000);
         });
       }
     });
   }
 
-  if (secoesComId.length && linksMenu.length && ('IntersectionObserver' in window)) {
-    var observadorMenu = new IntersectionObserver(function (entradas) {
-      // Se o utilizador clicou num link, ignora completamente as secções intermédias
-      if (isManualScrolling) return;
+  // Monitorizador de scroll otimizado e sem conflitos
+  var secoesComId = document.querySelectorAll('section[id]');
+  if (secoesComId.length && linksMenu.length) {
+    var scrollTimer = null;
 
-      entradas.forEach(function (entrada) {
-        if (entrada.isIntersecting) {
-          var id = entrada.target.getAttribute('id');
-          
-          linksMenu.keyCount = linksMenu.forEach(function (a) {
-            a.classList.remove('is-active');
-          });
+    window.addEventListener('scroll', function () {
+      if (scrollTimer) clearTimeout(scrollTimer);
 
-          var linkAtivo = document.querySelector('.navegacao a[href*="#' + id + '"]');
-          if (linkAtivo) {
-            linkAtivo.classList.add('is-active');
+      // Só recalcula a secção ativa 100ms *após* o scroll parar completamente
+      scrollTimer = setTimeout(function () {
+        var scrollPos = window.scrollY + window.innerHeight / 3;
+
+        secoesComId.forEach(function (secao) {
+          var topo = secao.offsetTop;
+          var altura = secao.offsetHeight;
+          var id = secao.getAttribute('id');
+
+          if (scrollPos >= topo && scrollPos < topo + altura) {
+            linksMenu.forEach(function (a) {
+              a.classList.remove('is-active');
+            });
+            var linkAtivo = document.querySelector('.navegacao a[href*="#' + id + '"]');
+            if (linkAtivo) {
+              linkAtivo.classList.add('is-active');
+            }
           }
-        }
-      });
-    }, { threshold: 0.3 });
-
-    secoesComId.forEach(function (secao) {
-      observadorMenu.observe(secao);
-    });
+        });
+      }, 100);
+    }, { passive: true });
   }
 
 })();
