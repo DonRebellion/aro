@@ -702,7 +702,11 @@ figure { margin: 0; }
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(244, 235, 221, .12);
 }
-@media (max-width: 760px) { .rodape__grelha { grid-template-columns: 1fr; gap: 1.5rem; } }
+@media (max-width: 725px) { 
+   .rodape__grelha { 
+       grid-template-columns: 1fr; gap: 1.5rem; 
+   } 
+}
 .rodape h4 {
   color: var(--tinta);
   font-size: .8125rem; font-weight: 700;
@@ -763,7 +767,6 @@ figure { margin: 0; }
     gap: 20px;
   }
 }
-
 
 /* =========================================================
    ANIMAÇÃO
