@@ -737,14 +737,14 @@ figure { margin: 0; }
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   .footer_nav li:not(:last-child)::after {
     content: "|";
     margin-left: 15px;
     opacity: 0.5;
   }
 }
-@media (min-width: 700px) {
+@media (min-width: 720px) {
   .footer_nav {
     display: flex;
     flex-direction: row;
