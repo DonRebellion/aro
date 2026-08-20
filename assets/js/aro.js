@@ -87,26 +87,28 @@
   /* --- destacar âncoras no menu ao fazer scroll e clique --- */
   var secoesComId = document.querySelectorAll('section[id]');
   var linksMenu = document.querySelectorAll('.navegacao a');
-  var timeoutId = null;
+  var isManualScrolling = false;
+  var scrollTimeout = null;
 
   if (linksMenu.length) {
     linksMenu.forEach(function (link) {
       var href = link.getAttribute('href');
       if (href && href.indexOf('#') !== -1) {
         link.addEventListener('click', function () {
-          // 1. Remove active from all and add strictly to the clicked one
+          // Bloqueia imediatamente o observer de scroll
+          isManualScrolling = true;
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+
+          // Aplica o active de forma estrita apenas ao link clicado
           linksMenu.forEach(function (a) {
             a.classList.remove('is-active');
           });
           this.classList.add('is-active');
 
-          // 2. Lock out the observer completely during the smooth scroll transition
-          if (timeoutId) clearTimeout(timeoutId);
-          window.__isScrollingToAnchor = true;
-          
-          timeoutId = setTimeout(function () {
-            window.__isScrollingToAnchor = false;
-          }, 900); // matches typical smooth scroll duration
+          // Liberta o bloqueio após a animação de scroll terminar
+          scrollTimeout = setTimeout(function () {
+            isManualScrolling = false;
+          }, 1000);
         });
       }
     });
@@ -114,13 +116,14 @@
 
   if (secoesComId.length && linksMenu.length && ('IntersectionObserver' in window)) {
     var observadorMenu = new IntersectionObserver(function (entradas) {
-      if (window.__isScrollingToAnchor) return; // Ignere if user just clicked an anchor
+      // Se o utilizador clicou num link, ignora completamente as secções intermédias
+      if (isManualScrolling) return;
 
       entradas.forEach(function (entrada) {
         if (entrada.isIntersecting) {
           var id = entrada.target.getAttribute('id');
           
-          linksMenu.forEach(function (a) {
+          linksMenu.keyCount = linksMenu.forEach(function (a) {
             a.classList.remove('is-active');
           });
 
