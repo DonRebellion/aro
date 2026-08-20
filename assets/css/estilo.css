@@ -702,7 +702,7 @@ figure { margin: 0; }
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(244, 235, 221, .12);
 }
-@media (max-width: 601px) { 
+@media (max-width: 719px) { 
    .rodape__grelha { 
        grid-template-columns: 1fr; 
        gap: 1.5rem;
@@ -744,6 +744,15 @@ figure { margin: 0; }
     content: "|";
     margin-left: 15px;
     opacity: 0.5;
+  }
+}
+@media (min-width: 601px) and (max-width: 719px) {
+  .footer_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
   }
 }
 @media (min-width: 720px) {
