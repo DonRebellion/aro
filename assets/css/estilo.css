@@ -717,7 +717,7 @@ figure { margin: 0; }
   gap: 1rem; padding-top: 1.5rem;
   font-size: .8125rem; color: var(--pedra);
 }
-.rodape__legal {
+.rodape__legal, footer .rodape ul {
   display: flex;
   flex-direction: column;
   gap: 10px; /* Adds space between the items */
