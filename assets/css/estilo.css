@@ -745,7 +745,7 @@ figure { margin: 0; }
     opacity: 0.5;
   }
 }
-@media (min-width: 720px) {
+@media (min-width: 721px) {
   .footer_nav {
     display: flex;
     flex-direction: row;
