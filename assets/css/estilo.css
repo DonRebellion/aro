@@ -717,12 +717,28 @@ figure { margin: 0; }
   gap: 1rem; padding-top: 1.5rem;
   font-size: .8125rem; color: var(--pedra);
 }
-.rodape__legal, footer .rodape ul li {
+.rodape__legal, .footer_nav {
   display: flex;
   flex-direction: column;
   gap: 10px; /* Adds space between the items */
   list-style: none; /* Optional: removes default bullet points */
   padding: 0;
+}
+..footer_nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Mobile: stacked */
+  gap: 10px;
+}
+
+/* Tablet: 2 columns, 2 rows */
+@media (min-width: 600px) {
+  .footer_nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (min-width: 768px) {
   .rodape__legal {
@@ -730,6 +746,13 @@ figure { margin: 0; }
     gap: 20px; /* Adjust spacing between items on PC */
   }
 }
+/* Desktop: 4 columns side by side */
+@media (min-width: 1024px) {
+  .footer_nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 /* =========================================================
    ANIMAÇÃO
    Uma curva só (--suave) e uma distância só, para tudo se
