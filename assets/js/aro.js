@@ -84,9 +84,24 @@
     alvos.forEach(function (el) { el.classList.add('visivel'); });
   }
 
-  /* --- destacar âncoras no menu ao fazer scroll --- */
+  /* --- destacar âncoras no menu ao fazer scroll e clique --- */
   var secoesComId = document.querySelectorAll('section[id]');
   var linksMenu = document.querySelectorAll('.navegacao a');
+
+  if (linksMenu.length) {
+    linksMenu.forEach(function (link) {
+      var href = link.getAttribute('href');
+      // Ativa se for um link de âncora (suporta index.html#impacto ou #impacto)
+      if (href && href.indexOf('#') !== -1) {
+        link.addEventListener('click', function () {
+          linksMenu.forEach(function (a) {
+            a.classList.remove('is-active');
+          });
+          this.classList.add('is-active');
+        });
+      }
+    });
+  }
 
   if (secoesComId.length && linksMenu.length && ('IntersectionObserver' in window)) {
     var observadorMenu = new IntersectionObserver(function (entradas) {
@@ -98,7 +113,8 @@
             a.classList.remove('is-active');
           });
 
-          var linkAtivo = document.querySelector('.navegacao a[href="#' + id + '"]');
+          // Procura o link contendo o ID correspondente (funciona com caminhos relativos como index.html#id)
+          var linkAtivo = document.querySelector('.navegacao a[href*="#' + id + '"]');
           if (linkAtivo) {
             linkAtivo.classList.add('is-active');
           }
