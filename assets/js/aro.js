@@ -84,33 +84,17 @@
     alvos.forEach(function (el) { el.classList.add('visivel'); });
   }
 
-  /* --- destacar âncoras no menu (Sem IntersectionObserver para evitar flashes) --- */
+  /* --- destacar âncoras no menu ao parar o scroll --- */
   var linksMenu = document.querySelectorAll('.navegacao a');
-
-  if (linksMenu.length) {
-    linksMenu.forEach(function (link) {
-      var href = link.getAttribute('href');
-      if (href && href.indexOf('#') !== -1) {
-        link.addEventListener('click', function () {
-          // Destaca imediatamente o link clicado sem esperar pelo scroll
-          linksMenu.forEach(function (a) {
-            a.classList.remove('is-active');
-          });
-          this.classList.add('is-active');
-        });
-      }
-    });
-  }
-
-  // Monitorizador de scroll otimizado e sem conflitos
   var secoesComId = document.querySelectorAll('section[id]');
+
   if (secoesComId.length && linksMenu.length) {
     var scrollTimer = null;
 
     window.addEventListener('scroll', function () {
       if (scrollTimer) clearTimeout(scrollTimer);
 
-      // Só recalcula a secção ativa 100ms *após* o scroll parar completamente
+      // Recalcula o link ativo apenas 100ms *após* o scroll/animação parar por completo
       scrollTimer = setTimeout(function () {
         var scrollPos = window.scrollY + window.innerHeight / 3;
 
