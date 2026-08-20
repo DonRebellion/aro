@@ -748,10 +748,6 @@ figure { margin: 0; }
   }
 }
 @media (min-width: 725px) {
-  .rodape__legal {
-    flex-direction: row;
-    gap: 20px;
-  }
   .footer_nav {
     display: flex;
     flex-direction: row;
@@ -761,6 +757,13 @@ figure { margin: 0; }
     gap: 15px;
   }
 }
+@media (min-width: 335px) {
+  .rodape__legal {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
 
 /* =========================================================
    ANIMAÇÃO
