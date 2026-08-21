@@ -638,7 +638,7 @@ figure { margin: 0; }
   gap: 1rem; flex-wrap: wrap;
   padding: .8rem 1.25rem;
   border-bottom: 1px solid var(--borda);
-  background: var(--fundo);
+  background: var(--ameixa);
 }
 .seccao--areia .carta__cabecalho { background: var(--fundo); }
 .carta__titulo {
