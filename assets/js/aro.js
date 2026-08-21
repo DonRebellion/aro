@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Active state for "como functiona" */
 document.querySelectorAll('.passo').forEach(card => {
-    card.addEventListener('click', function() {
+    card.addEventListener('click', function(e) {
         this.classList.toggle('is-active');
     });
 });
