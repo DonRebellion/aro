@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputMorada = document.getElementById("input-morada");
 
   const displayRua = document.getElementById("display-rua");
+  const displayRuaAssinatura = document.getElementById("display-rua-assinatura");
   const displayDestinatario = document.getElementById("display-destinatario");
   const displayFreguesia = document.getElementById("display-freguesia");
   const displayNome = document.getElementById("display-nome");
@@ -24,13 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const ruas = inputRuas.value.trim() || "[duas ou três ruas]";
     const morada = inputMorada.value.trim() || "[morada]";
 
-    // Update live preview text safely
-    displayRua.textContent = rua;
-    displayDestinatario.textContent = destinatario;
-    displayFreguesia.textContent = freguesia;
-    displayNome.textContent = nome;
-    displayRuas.textContent = ruas;
-    displayMorada.textContent = morada;
+    // Update live preview text safely for all fields (including both rua locations)
+    if (displayRua) displayRua.textContent = rua;
+    if (displayRuaAssinatura) displayRuaAssinatura.textContent = rua;
+    if (displayDestinatario) displayDestinatario.textContent = destinatario;
+    if (displayFreguesia) displayFreguesia.textContent = freguesia;
+    if (displayNome) displayNome.textContent = nome;
+    if (displayRuas) displayRuas.textContent = ruas;
+    if (displayMorada) displayMorada.textContent = morada;
 
     // Build the email subject and body content dynamically
     const subject = `Papeleiras reviradas em ${rua}`;
@@ -50,7 +52,9 @@ ${nome}
 ${rua}, ${morada}`;
 
     // Safely encode for mailto protocols
-    mailtoButton.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (mailtoButton) {
+      mailtoButton.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
   }
 
   // Listen to all inputs changing
