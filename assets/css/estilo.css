@@ -992,7 +992,6 @@ figure { margin: 0; }
   background-repeat: no-repeat;
   position: absolute;
   top: 10px;
-  left: 5px;
   transition: transform 0.4s cubic-bezier(.22, .61, .36, 1);
 }
 .passo-imagem::before {
