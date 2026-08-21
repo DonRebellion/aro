@@ -973,7 +973,7 @@ figure { margin: 0; }
     right: -5px;
   }
   .passo-imagem::before {
-    left: auto;
+    left: auto !important;
   }
 }
 
