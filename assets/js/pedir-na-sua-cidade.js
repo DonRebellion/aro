@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const destinatario = inputDestinatario.value.trim() || "[Presidente da Junta / Vereador(a) do Ambiente]";
     const freguesia = inputFreguesia.value.trim() || "[rua, freguesia]";
     const nome = inputNome.value.trim() || "[o seu nome]";
-    const ruas = inputRuas.value.trim() || "[duas ou três ruas]";
+    const ruas = inputRuas.value.trim() || "[rua(s) para teste]";
     const morada = inputMorada.value.trim() || "[morada]";
 
     // Update live preview text safely for all fields (including both rua locations)
