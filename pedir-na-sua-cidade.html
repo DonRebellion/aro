@@ -55,14 +55,16 @@
     </div>
   </section>
 
-<section class="seccao seccao--areia" id="carta">
-      <div class="envolve">
-        <div class="carta aparece">
+    <section class="seccao seccao--areia" id="carta">
+      <div class="envolve" style="display: grid; gap: 2rem;">
 
-          <!-- Interactive Inputs for Dynamic Placeholders -->
-          <div class="carta__inputs-personalizados carta__corpo" style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">Personalize a sua carta:</h3>
-            <div style="display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <!-- BLOCK 1: Interactive Inputs (Separate Card) -->
+        <div class="carta aparece">
+          <div class="carta__cabecalho">
+            <span class="carta__titulo">Personalize a sua carta</span>
+          </div>
+          <div class="carta__corpo">
+            <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
               <div>
                 <label for="input-rua" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">A sua rua:</label>
                 <input type="text" id="input-rua" placeholder="ex: Rua de Santa Catarina" value="[a sua rua]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
@@ -81,8 +83,10 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Top header showing just the card title now -->
+        <!-- BLOCK 2: Email Template & Actions (Separate Card) -->
+        <div class="carta aparece">
           <div class="carta__cabecalho" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="carta__titulo">Modelo de email</span>
           </div>
@@ -128,7 +132,7 @@
             </p>
           </div>
 
-          <!-- Action Buttons Toolbar moved to the bottom -->
+          <!-- Action Buttons Toolbar at the bottom -->
           <div class="carta__rodape" style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: flex-end; margin-top: 1.5rem; border-top: 1px solid var(--borda); padding-top: 1rem;">
             <!-- Mailto Action Button (Dynamic & Accessible) -->
             <a id="botao-enviar-email" 
@@ -142,8 +146,8 @@
             <!-- Existing Copy Button -->
             <button class="botao botao--acento botao--mini" type="button" data-copiar="carta-modelo" aria-label="Copiar texto da carta para a área de transferência">Copiar</button>
           </div>
-
         </div>
+
       </div>
     </section>
     
