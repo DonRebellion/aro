@@ -640,11 +640,11 @@ figure { margin: 0; }
   border-bottom: 1px solid var(--borda);
   background: var(--areia-fundo);
 }
-.seccao--areia .carta__cabecalho { background: var(--areia-fundo); }
+.seccao--areia .carta__cabecalho { background: var(--fundo); }
 .carta__titulo {
   font-size: .8125rem; font-weight: 700;
   letter-spacing: .14em; text-transform: uppercase;
-  color: var(--tinta-2);
+  color: var(--areia-fundo);
 }
 .carta__corpo { padding: clamp(1.35rem, 2.6vw, 2rem); font-size: .9375rem; line-height: 1.7; }
 .carta__corpo p { margin-bottom: 1em; }
