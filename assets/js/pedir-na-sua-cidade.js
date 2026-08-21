@@ -47,7 +47,7 @@ O meu pedido é simples: que considerem testar aros na nossa cidade. Bastariam a
 
 Agradeço a atenção.
 ${nome}
-${morada}`;
+${rua}, ${morada}`;
 
     // Safely encode for mailto protocols
     mailtoButton.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
