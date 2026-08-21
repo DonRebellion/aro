@@ -640,7 +640,7 @@ figure { margin: 0; }
   border-bottom: 1px solid var(--borda);
   background: var(--ameixa);
 }
-.seccao--areia .carta__cabecalho { background: var(--fundo); }
+.seccao--areia .carta__cabecalho { background: var(--ameixa); }
 .carta__titulo {
   font-size: .8125rem; font-weight: 700;
   letter-spacing: .14em; text-transform: uppercase;
