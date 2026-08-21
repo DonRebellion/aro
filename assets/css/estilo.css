@@ -1016,6 +1016,12 @@ figure { margin: 0; }
   left: 20px;
   z-index: 2;
 }
+.passo-imagem::after,
+.passo-imagem::before,
+.passo-imagem img {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
 .imagem-pousar::after {
   background-image: url('https://aro100.pages.dev/assets/img/garaffa-icon.webp');
 }
@@ -1037,7 +1043,7 @@ figure { margin: 0; }
 }
 .imagem-devolver::before {
   background-image: url('https://aro100.pages.dev/assets/img/flecha-icon.webp');
-  animation: pulseAndTransformDevolverBottom 2s infinite ease-in-out;
+  transition: opacity 0.3s ease;
   opacity: 0;
 }
 
@@ -1065,9 +1071,11 @@ figure { margin: 0; }
 .passo.is-active .imagem-devolver::after {
   opacity: 0;
 }
+/* Reveal on hover/active */
 .passo:hover .imagem-devolver::before,
 .passo.is-active .imagem-devolver::before {
-  opacity: 1;
+    opacity: 1;
+    animation: pulseAndTransformDevolverBottom 2s infinite ease-in-out;
 }
 @keyframes pulse {
   0% {
