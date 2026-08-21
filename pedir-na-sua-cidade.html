@@ -58,9 +58,9 @@
     <section class="seccao seccao--areia" id="carta">
       <div class="envolve" style="display: grid; gap: 2rem;">
 
-        <!-- CARD 1: Input Section (Now with 6 fields) -->
-        <div class="carta aparece">
-          <div class="carta__corpo">
+        <!-- CARD 1: Input Section -->
+        <div class="aparece">
+          <div class="carta__corpo carta">
             <div class="carta__inputs-personalizados">
               <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">Personalize a sua carta:</h3>
               <div style="display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
@@ -100,7 +100,7 @@
             <span class="carta__titulo">Modelo de email</span>
           </div>
 
-          <!-- Letter Body with live elements -->
+          <!-- Letter Body -->
           <div class="carta__corpo" id="carta-modelo">
             <p class="carta__assunto">
               Assunto: Papeleiras reviradas em <span id="display-rua" class="preencher">[a sua rua]</span>
@@ -151,7 +151,6 @@
                aria-label="Abrir aplicação de email com a mensagem preenchida">
                Enviar por Email
             </a>
-
             <!-- Copy Button -->
             <button class="botao botao--acento botao--mini" type="button" data-copiar="carta-modelo" aria-label="Copiar texto da carta para a área de transferência">Copiar</button>
           </div>
