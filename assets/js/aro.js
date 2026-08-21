@@ -165,3 +165,11 @@ document.addEventListener("DOMContentLoaded", () => {
     track.style.setProperty("--total-slides", totalSlides);
     track.style.setProperty("--half-slides", originalCount);
 });
+
+
+/* Active state for "como functiona" */
+document.querySelectorAll('.passo').forEach(card => {
+    card.addEventListener('click', function() {
+        this.classList.toggle('is-active');
+    });
+});
