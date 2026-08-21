@@ -58,36 +58,37 @@
     <section class="seccao seccao--areia" id="carta">
       <div class="envolve" style="display: grid; gap: 2rem;">
 
-        <!-- BLOCK 1: Interactive Inputs (Separate Card) -->
+        <!-- CARD 1: Input Section (Exact format you wanted) -->
         <div class="carta aparece">
-          <div class="carta__cabecalho">
-            <span class="carta__titulo">Personalize a sua carta</span>
-          </div>
           <div class="carta__corpo">
-            <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-              <div>
-                <label for="input-rua" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">A sua rua:</label>
-                <input type="text" id="input-rua" placeholder="ex: Rua de Santa Catarina" value="[a sua rua]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
-              </div>
-              <div>
-                <label for="input-destinatario" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">Destinatário:</label>
-                <input type="text" id="input-destinatario" placeholder="ex: Presidente da Junta" value="Presidente da Junta / Vereador(a) do Ambiente" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
-              </div>
-              <div>
-                <label for="input-freguesia" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">Localidade / Freguesia:</label>
-                <input type="text" id="input-freguesia" placeholder="ex: Matosinhos" value="[rua, freguesia]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
-              </div>
-              <div>
-                <label for="input-nome" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">O seu nome:</label>
-                <input type="text" id="input-nome" placeholder="ex: Maria Silva" value="[o seu nome]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+            <div class="carta__inputs-personalizados">
+              <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">Personalize a sua carta:</h3>
+              <div style="display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div>
+                  <label for="input-rua" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">A sua rua:</label>
+                  <input type="text" id="input-rua" placeholder="ex: Rua de Santa Catarina" value="[a sua rua]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+                </div>
+                <div>
+                  <label for="input-destinatario" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">Destinatário:</label>
+                  <input type="text" id="input-destinatario" placeholder="ex: Presidente da Junta" value="Presidente da Junta / Vereador(a) do Ambiente" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+                </div>
+                <div>
+                  <label for="input-freguesia" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">Localidade / Freguesia:</label>
+                  <input type="text" id="input-freguesia" placeholder="ex: Matosinhos" value="[rua, freguesia]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+                </div>
+                <div>
+                  <label for="input-nome" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">O seu nome:</label>
+                  <input type="text" id="input-nome" placeholder="ex: Maria Silva" value="[o seu nome]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- BLOCK 2: Email Template & Actions (Separate Card) -->
+        <!-- CARD 2: Email Template Section -->
         <div class="carta aparece">
-          <div class="carta__cabecalho">
+          <!-- Top header showing card title -->
+          <div class="carta__cabecalho" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="carta__titulo">Modelo de email</span>
           </div>
 
