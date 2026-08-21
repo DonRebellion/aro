@@ -972,6 +972,8 @@ figure { margin: 0; }
   .passo-imagem::after {
     right: -5px;
   }
+}
+@media (max-width: 1000px) {
   .passo-imagem::before {
     left: auto !important;
   }
