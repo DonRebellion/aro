@@ -985,9 +985,11 @@ figure { margin: 0; }
 }
 .passo-imagem::after {
   content: "";
-  width: 110px;
-  height: 110px;
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  max-width: 110px;
+  max-height: 110px;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
@@ -996,9 +998,11 @@ figure { margin: 0; }
 }
 .passo-imagem::before {
   content: "";
-  width: 110px;
-  height: 110px;
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  max-width: 110px;
+  max-height: 110px;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
   position: absolute;
