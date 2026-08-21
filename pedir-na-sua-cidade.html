@@ -55,56 +55,93 @@
     </div>
   </section>
 
-  <section class="seccao seccao--areia" id="carta">
-    <div class="envolve">
-      <div class="carta aparece">
-        <div class="carta__cabecalho">
-          <span class="carta__titulo">Modelo de email</span>
-          <button class="botao botao--acento botao--mini" type="button" data-copiar="carta-modelo">Copiar</button>
-        </div>
+    <section class="seccao seccao--areia" id="carta">
+      <div class="envolve">
+        <div class="carta aparece">
 
-        <div class="carta__corpo" id="carta-modelo">
-          <p class="carta__assunto">
-            Assunto: Papeleiras reviradas em <span class="preencher">[a sua rua]</span>
-          </p>
+          <!-- Interactive Inputs for Dynamic Placeholders -->
+          <div class="carta__inputs-personalizados" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">Personalize a sua carta:</h3>
+            <div style="display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+              <div>
+                <label for="input-rua" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">A sua rua:</label>
+                <input type="text" id="input-rua" placeholder="ex: Rua de Santa Catarina" value="[a sua rua]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+              </div>
+              <div>
+                <label for="input-destinatario" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">Destinatário:</label>
+                <input type="text" id="input-destinatario" placeholder="ex: Presidente da Junta" value="Presidente da Junta / Vereador(a) do Ambiente" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+              </div>
+              <div>
+                <label for="input-freguesia" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">Localidade / Freguesia:</label>
+                <input type="text" id="input-freguesia" placeholder="ex: Matosinhos" value="[rua, freguesia]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+              </div>
+              <div>
+                <label for="input-nome" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">O seu nome:</label>
+                <input type="text" id="input-nome" placeholder="ex: Maria Silva" value="[o seu nome]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+              </div>
+            </div>
+          </div>
 
-          <p>Exmo.(a) Senhor(a) <span class="preencher">[Presidente da Junta / Vereador(a) do Ambiente]</span>,</p>
+          <!-- Action Buttons Toolbar -->
+          <div class="carta__cabecalho" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+            <span class="carta__titulo">Modelo de email</span>
 
-          <p>
-            Sou residente em <span class="preencher">[rua, freguesia]</span> e escrevo por causa
-            das papeleiras da minha rua.
-          </p>
+            <!-- Mailto Action Button (Dynamic & Accessible) -->
+            <a id="botao-enviar-email" 
+               class="botao botao--acento botao--mini" 
+               href="mailto:?subject=Papeleiras%20reviradas..." 
+               role="button" 
+               aria-label="Abrir aplicação de email com a mensagem preenchida">
+               Enviar por Email
+            </a>
 
-          <p>
-            Desde que as embalagens passaram a valer depósito, há pessoas que as procuram
-            dentro do lixo. Não escrevo a pedir multas — é indigno ter de meter as mãos
-            entre resíduos por dez cêntimos. Mas o resultado também é mau para todos: o
-            contentor acaba despejado no passeio e a rua fica pior do que estava.
-          </p>
+            <!-- Existing Copy Button -->
+            <button class="botao botao--acento botao--mini" type="button" data-copiar="carta-modelo" aria-label="Copiar texto da carta para a área de transferência">Copiar</button>
+          </div>
 
-          <p>
-            Existe uma solução simples, já usada há anos noutros países: o aro, um pequeno
-            suporte em aço que se fixa às papeleiras existentes. Quem não quer o reembolso
-            pousa ali a garrafa ou a lata; quem a quer leva-a com a mão, sem tocar no lixo
-            e sem espalhar nada. Está tudo explicado em <a href="https://arourbano.pt/">arourbano.pt</a>.
-          </p>
+          <!-- Letter Body with live elements -->
+          <div class="carta__corpo" id="carta-modelo">
+            <p class="carta__assunto">
+              Assunto: Papeleiras reviradas em <span id="display-rua" class="preencher">[a sua rua]</span>
+            </p>
 
-          <p>
-            O meu pedido é simples: que considerem testar aros na nossa cidade. Bastariam
-            as papeleiras de <span class="preencher">[duas ou três ruas]</span> para perceber
-            se resulta. Em arourbano.pt encontram o contacto da equipa, que faz uma visita
-            técnica sem compromisso.
-          </p>
+            <p>Exmo.(a) Senhor(a) <span id="display-destinatario" class="preencher">[Presidente da Junta / Vereador(a) do Ambiente]</span>,</p>
 
-          <p>
-            Agradeço a atenção.<br>
-            <span class="preencher">[o seu nome]</span><br>
-            <span class="preencher">[morada]</span>
-          </p>
+            <p>
+              Sou residente em <span id="display-freguesia" class="preencher">[rua, freguesia]</span> e escrevo por causa
+              das papeleiras da minha rua.
+            </p>
+
+            <p>
+              Desde que as embalagens passaram a valer depósito, há pessoas que as procuram
+              dentro do lixo. Não escrevo a pedir multas — é indigno ter de meter as mãos
+              entre resíduos por dez cêntimos. Mas o resultado também é mau para todos: o
+              contentor acaba despejado no passeio e a rua fica pior do que estava.
+            </p>
+
+            <p>
+              Existe uma solução simples, já usada há anos noutros países: o aro, um pequeno
+              suporte em aço que se fixa às papeleiras existentes. Quem não quer o reembolso
+              pousa ali a garrafa ou a lata; quem a quer leva-a com a mão, sem tocar no lixo
+              e sem espalhar nada. Está tudo explicado em <a href="https://arourbano.pt/">arourbano.pt</a>.
+            </p>
+
+            <p>
+              O meu pedido é simples: que considerem testar aros na nossa cidade. Bastariam
+              as papeleiras de <span class="preencher">[duas ou três ruas]</span> para perceber
+              se resulta. Em arourbano.pt encontram o contacto da equipa, que faz uma visita
+              técnica sem compromisso.
+            </p>
+
+            <p>
+              Agradeço a atenção.<br>
+              <span id="display-nome" class="preencher">[o seu nome]</span><br>
+              <span class="preencher">[morada]</span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <section class="seccao seccao--fundo seccao--curta">
     <div class="envolve">
@@ -146,5 +183,6 @@
 </footer>
 
 <script src="assets/js/aro.js" defer></script>
+<script src="assets/js/pedir-na-sua-cidade.js" defer></script>
 </body>
 </html>
