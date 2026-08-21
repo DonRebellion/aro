@@ -58,9 +58,9 @@
     <section class="seccao seccao--areia" id="carta">
       <div class="envolve" style="display: grid; gap: 2rem;">
 
-        <!-- CARD 1: Input Section -->
-        <div class="aparece">
-          <div class="carta__corpo carta">
+        <!-- CARD 1: Input Section (Now with 6 fields) -->
+        <div class="carta aparece">
+          <div class="carta__corpo">
             <div class="carta__inputs-personalizados">
               <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">Personalize a sua carta:</h3>
               <div style="display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
@@ -79,6 +79,14 @@
                 <div>
                   <label for="input-nome" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">O seu nome:</label>
                   <input type="text" id="input-nome" placeholder="ex: Maria Silva" value="[o seu nome]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+                </div>
+                <div>
+                  <label for="input-ruas-teste" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">Ruas para teste:</label>
+                  <input type="text" id="input-ruas-teste" placeholder="ex: duas ou três ruas" value="[duas ou três ruas]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
+                </div>
+                <div>
+                  <label for="input-morada" style="display: block; font-size: 0.85rem; margin-bottom: 0.25rem;">A sua morada:</label>
+                  <input type="text" id="input-morada" placeholder="ex: Rua Exemplo, 123" value="[morada]" style="width: 100%; padding: 0.5rem; border: 1px solid var(--borda); border-radius: var(--raio);">
                 </div>
               </div>
             </div>
@@ -121,7 +129,7 @@
 
             <p>
               O meu pedido é simples: que considerem testar aros na nossa cidade. Bastariam
-              as papeleiras de <span class="preencher">[duas ou três ruas]</span> para perceber
+              as papeleiras de <span id="display-ruas-teste" class="preencher">[duas ou três ruas]</span> para perceber
               se resulta. Em arourbano.pt encontram o contacto da equipa, que faz uma visita
               técnica sem compromisso.
             </p>
@@ -129,7 +137,7 @@
             <p>
               Agradeço a atenção.<br>
               <span id="display-nome" class="preencher">[o seu nome]</span><br>
-              <span class="preencher">[morada]</span>
+              <span id="display-morada" class="preencher">[morada]</span>
             </p>
           </div>
 
