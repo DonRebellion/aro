@@ -972,6 +972,9 @@ figure { margin: 0; }
   .passo-imagem::after {
     right: -5px;
   }
+  .passo-imagem::before {
+    right: 20px;
+  }
 }
 
 .card-img {
@@ -994,6 +997,7 @@ figure { margin: 0; }
   background-repeat: no-repeat;
   position: absolute;
   top: 10px;
+  right: 0;
   transition: transform 0.4s cubic-bezier(.22, .61, .36, 1);
 }
 .passo-imagem::before {
@@ -1007,6 +1011,7 @@ figure { margin: 0; }
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
+  left: 20px;
   z-index: 2;
 }
 .imagem-pousar::after {
