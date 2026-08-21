@@ -126,6 +126,10 @@ display: flex;
   min-height: 100vh;
 }
 
+main {
+    flex: 1;
+}
+
 img, svg { max-width: 100%; display: block; }
 img { height: auto; }
 
