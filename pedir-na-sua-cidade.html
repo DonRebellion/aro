@@ -55,7 +55,7 @@
     </div>
   </section>
 
-    <section class="seccao seccao--areia" id="carta">
+<section class="seccao seccao--areia" id="carta">
       <div class="envolve">
         <div class="carta aparece">
 
@@ -82,21 +82,9 @@
             </div>
           </div>
 
-          <!-- Action Buttons Toolbar -->
-          <div class="carta__cabecalho" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+          <!-- Top header showing just the card title now -->
+          <div class="carta__cabecalho" style="display: flex; justify-content: space-between; align-items: center;">
             <span class="carta__titulo">Modelo de email</span>
-
-            <!-- Mailto Action Button (Dynamic & Accessible) -->
-            <a id="botao-enviar-email" 
-               class="botao botao--acento botao--mini" 
-               href="mailto:?subject=Papeleiras%20reviradas..." 
-               role="button" 
-               aria-label="Abrir aplicação de email com a mensagem preenchida">
-               Enviar por Email
-            </a>
-
-            <!-- Existing Copy Button -->
-            <button class="botao botao--acento botao--mini" type="button" data-copiar="carta-modelo" aria-label="Copiar texto da carta para a área de transferência">Copiar</button>
           </div>
 
           <!-- Letter Body with live elements -->
@@ -139,10 +127,27 @@
               <span class="preencher">[morada]</span>
             </p>
           </div>
+
+          <!-- Action Buttons Toolbar moved to the bottom -->
+          <div class="carta__rodape" style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: flex-end; margin-top: 1.5rem; border-top: 1px solid var(--borda); padding-top: 1rem;">
+            <!-- Mailto Action Button (Dynamic & Accessible) -->
+            <a id="botao-enviar-email" 
+               class="botao botao--acento botao--mini" 
+               href="mailto:?subject=Papeleiras%20reviradas..." 
+               role="button" 
+               aria-label="Abrir aplicação de email com a mensagem preenchida">
+               Enviar por Email
+            </a>
+
+            <!-- Existing Copy Button -->
+            <button class="botao botao--acento botao--mini" type="button" data-copiar="carta-modelo" aria-label="Copiar texto da carta para a área de transferência">Copiar</button>
+          </div>
+
         </div>
       </div>
     </section>
-
+    
+    
   <section class="seccao seccao--fundo seccao--curta">
     <div class="envolve">
       <div class="chamada aparece">
