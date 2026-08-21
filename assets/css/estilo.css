@@ -969,6 +969,9 @@ figure { margin: 0; }
   .passo-imagem {
   justify-content: flex-end;
   }
+  .passo-imagem::after {
+    right: -5px;
+  }
 }
 
 .card-img {
