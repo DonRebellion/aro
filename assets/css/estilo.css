@@ -965,6 +965,12 @@ figure { margin: 0; }
   position: relative;
   z-index: 1;
 }
+@media (max-width: 820px) {
+  .passo-imagem {
+  justify-content: flex-end;
+  }
+}
+
 .card-img {
   width: 150px;
   height: 150px;
