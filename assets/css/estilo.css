@@ -431,7 +431,12 @@ strong { font-weight: 700; }
   background: var(--superficie);
   border: 1px solid var(--borda);
   border-radius: var(--raio);
-  padding: clamp(1.35rem, 2.4vw, 1.85rem);
+  padding-top: 0;
+  padding-bottom: clamp(1.35rem, 2.4vw, 1.85rem);
+  padding-left: clamp(1.35rem, 2.4vw, 1.85rem);
+  padding-right: 0;
+  overflow: hidden;
+  perspective: 1000px;
 }
 .passo h3 { margin-bottom: .3rem; }
 .passo p { color: var(--tinta-2); font-size: .9375rem; margin-bottom: 0; }
