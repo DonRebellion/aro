@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arotec.pt/sitemap.xml
+Sitemap: https://arourbano.pt/sitemap.xml
