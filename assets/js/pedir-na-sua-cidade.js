@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (displayMorada) displayMorada.textContent = morada;
 
         // Build the email subject and body content dynamically
-        const subject = `Papeleiras reviradas em ${rua}`;
+        const subject = `Caixotes do lixo reviradas em ${rua}`;
         const body = 
     `Exmo.(a) Senhor(a) ${destinatario},
 
