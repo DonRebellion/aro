@@ -1124,3 +1124,107 @@ figure { margin: 0; }
     transform: rotate(30deg) scaleX(-1) scaleY(-1) scale(1);
   }
 }
+
+
+
+/* CUSTOM TO ADD */
+.aro-float-container {
+  position: relative;
+  /* Use calc to subtract the total left/right spacing from 100% width on mobile */
+  width: calc(100% - 60px);
+  max-width: 600px;
+  aspect-ratio: 600 / 250; 
+  background-color: var(--ameixa-cartao);
+  border-radius: 50% 50% 0 0;
+  margin: 35px auto 0 auto;
+  border: 1px solid var(--ameixa);
+}
+
+/* Container for the background image */
+.aro-float-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  border-radius: inherit;
+}
+
+/* Locks the background image to a controlled responsive size */
+.aro-float-bg img {
+  position: absolute;
+  width: clamp(250px, 60vw, 450px); 
+  height: auto;
+  left: 50%;
+  bottom: -80px; 
+  transform: translateX(-50%); 
+  pointer-events: none;
+}
+
+/* Base style for all floating bottle/can layers */
+.aro-float-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+/* Layer 1: Garrafa Grande */
+.garrafa-grande {
+  background-image: url('https://aro100.pages.dev/assets/img/garrafa-grande.webp');
+  animation: floatFastGarrafaGrande 8s ease-in-out infinite alternate;
+  top: -15%;
+  right: -30%;
+  z-index: 1;
+}
+
+/* Layer 2: Garrafa Pequena */
+.garrafa-pequena {
+  background-image: url('https://aro100.pages.dev/assets/img/garrafa-pequena.webp');
+  animation: floatSlowGarrafaGrande 5s ease-in-out infinite alternate;
+  top: -30%;
+  left: -8%;
+}
+
+/* Layer 3: Lata Grande */
+.lata-grande {
+  background-image: url('https://aro100.pages.dev/assets/img/lata-grande.webp');
+  animation: floatSlowLataGrande 5s ease-in-out infinite alternate;
+  top: 0%;
+  left: -30%;
+  z-index: 3;
+}
+
+/* Layer 4: Lata Pequena */
+.lata-pequena {
+  background-image: url('https://aro100.pages.dev/assets/img/lata-pequena.webp');
+  animation: floatFastLataPequena 3s ease-in-out infinite alternate;
+  top: 10%;
+  right: -10%;
+  z-index: 2;
+}
+
+/* Keyframes */
+@keyframes floatSlowLataGrande {
+  0% { transform: translate(0px, 0px) scale(1); }
+  100% { transform: translate(35px, 15px) scale(1.02); }
+}
+
+@keyframes floatFastGarrafaGrande {
+  0% { transform: translate(0px, 0px) scale(1); }
+  100% { transform: translate(25px, -15px) scale(1.05); }
+}
+
+@keyframes floatFastLataPequena {
+  0% { transform: translate(0px, 0px) scale(1); }
+  100% { transform: translate(25px, -30px) scale(1.05); }
+}
+
+@keyframes floatSlowGarrafaGrande {
+  0% { transform: translate(0px, 0px) scale(1); }
+  100% { transform: translate(-5px, -20px) scale(1.02); }
+}
