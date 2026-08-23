@@ -1128,6 +1128,17 @@ figure { margin: 0; }
 
 
 /* Arror float div */
+.aro-pop-up-cta {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s var(--suave), transform .6s var(--suave);
+  transition-delay: 0.3s; 
+}
+.arro-pop-up-cta.visivel {
+  opacity: 1;
+  transform: none;
+}
+
 .aro-float-container {
   position: relative;
   width: calc(100% - 60px);
