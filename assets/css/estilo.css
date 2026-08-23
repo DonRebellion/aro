@@ -1128,10 +1128,6 @@ figure { margin: 0; }
 
 
 /* Arror float div */
-.aro-pop-up-cta {
-  margin-bottom: 2.5rem;
-}
-
 .aro-float-container {
   position: relative;
   width: calc(100% - 60px);
