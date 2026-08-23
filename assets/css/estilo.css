@@ -1142,15 +1142,13 @@ figure { margin: 0; }
 
 .aro-float-container {
   position: relative;
-  width: calc(100% - 40px);
+  width: calc(100% - 60px);
   max-width: 600px;
   aspect-ratio: 600 / 250; 
   background-color: var(--ameixa-cartao);
   border-radius: 50% 50% 0 0;
   margin: 35px auto 0 auto;
   border: 1px solid var(--ameixa);
-  overflow: hidden;
-  clip-path: inset(0 round 50% 50% 0 0);
 }
 .aro-float-bg {
   position: absolute;
