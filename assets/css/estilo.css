@@ -1129,6 +1129,9 @@ figure { margin: 0; }
 
 
 /* Aro float div */
+.aro-cta {
+  overflow-x: hidden;
+}
 .aro-pop-up-cta {
   opacity: 0;
   transform: translateY(14px);
