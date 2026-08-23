@@ -1131,8 +1131,8 @@ figure { margin: 0; }
 .aro-pop-up-cta {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity .6s var(--suave), transform .6s var(--suave);
-  transition-delay: 0.3s; 
+  transition: opacity 1.2s var(--suave), transform 1.2s var(--suave);
+  transition-delay: 0.4s; 
 }
 .arro-pop-up-cta.visivel {
   opacity: 1;
