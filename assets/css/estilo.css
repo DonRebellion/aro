@@ -1130,7 +1130,7 @@ figure { margin: 0; }
 
 /* Aro float div */
 .aro-cta {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .aro-pop-up-cta {
   opacity: 0;
