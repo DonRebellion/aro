@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputFreguesia = document.getElementById("input-freguesia");
   const inputNome = document.getElementById("input-nome");
   const inputRuas = document.getElementById("input-ruas");
-  const inputMorada = document.getElementById("input-numero-casa");
+  const inputMorada = document.getElementById("input-morada");
 
   const displayRua = document.getElementById("display-rua");
   const displayRuaAssinatura = document.getElementById("display-rua-assinatura");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayFreguesia = document.getElementById("display-freguesia");
   const displayNome = document.getElementById("display-nome");
   const displayRuas = document.getElementById("display-ruas");
-  const displayMorada = document.getElementById("display-casa");
+  const displayMorada = document.getElementById("display-morada");
   
   const mailtoButton = document.getElementById("botao-enviar-email");
 
