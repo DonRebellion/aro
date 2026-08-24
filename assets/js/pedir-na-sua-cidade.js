@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayDestinatario = document.getElementById("display-destinatario");
   const displayFreguesia = document.getElementById("display-freguesia");
   const displayNome = document.getElementById("display-nome");
-  const displayRuas = document.getElementById("display-ruas");
+  const displayMorada = document.getElementById("display-morada");
   
   const mailtoButton = document.getElementById("botao-enviar-email");
 
@@ -20,16 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const nome = inputNome.value.trim() || "[o seu nome]";
     const ruas = inputRuas.value.trim() || "[rua(s) para teste]";
 
-    document.querySelectorAll("#display-morada").forEach(el => {
-      el.textContent = morada;
+    // Update ALL elements with id="display-ruas" (both subject line and body reference)
+    document.querySelectorAll("#display-ruas").forEach(el => {
+      el.textContent = ruas;
     });
 
     if (displayDestinatario) displayDestinatario.textContent = destinatario;
     if (displayFreguesia) displayFreguesia.textContent = freguesia;
     if (displayNome) displayNome.textContent = nome;
-    if (displayRuas) displayRuas.textContent = ruas;
+    if (displayMorada) displayMorada.textContent = morada;
 
-    const subject = `Caixotes do lixo reviradas em ${morada}`;
+    // Build the email subject (using ruas) and body content dynamically
+    const subject = `Caixotes do lixo reviradas em ${ruas}`;
     const body = 
 `Exmo.(a) Senhor(a) ${destinatario},
 
