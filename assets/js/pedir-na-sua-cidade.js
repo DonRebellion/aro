@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputNome = document.getElementById("input-nome");
   const inputRuas = document.getElementById("input-ruas");
 
-  const displayMorada = document.getElementById("display-morada");
-  const displayRuaAssinatura = document.getElementById("display-rua-assinatura");
   const displayDestinatario = document.getElementById("display-destinatario");
   const displayFreguesia = document.getElementById("display-freguesia");
   const displayNome = document.getElementById("display-nome");
@@ -15,42 +13,42 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const mailtoButton = document.getElementById("botao-enviar-email");
 
-    function atualizarCarta() {
-        const morada = inputMorada.value.trim() || "[morada]";
-        const destinatario = inputDestinatario.value.trim() || "[Presidente da Junta / Vereador(a) do Ambiente]";
-        const freguesia = inputFreguesia.value.trim() || "[rua, freguesia]";
-        const nome = inputNome.value.trim() || "[o seu nome]";
-        const ruas = inputRuas.value.trim() || "[rua(s) para teste]";
+  function atualizarCarta() {
+    const morada = inputMorada.value.trim() || "[morada]";
+    const destinatario = inputDestinatario.value.trim() || "[Presidente da Junta / Vereador(a) do Ambiente]";
+    const freguesia = inputFreguesia.value.trim() || "[rua, freguesia]";
+    const nome = inputNome.value.trim() || "[o seu nome]";
+    const ruas = inputRuas.value.trim() || "[rua(s) para teste]";
 
-        // Update live preview text safely
-        if (displayMorada) displayMorada.textContent = morada;
-        if (displayRuaAssinatura) displayRuaAssinatura.textContent = rua;
-        if (displayDestinatario) displayDestinatario.textContent = destinatario;
-        if (displayFreguesia) displayFreguesia.textContent = freguesia;
-        if (displayNome) displayNome.textContent = nome;
-        if (displayRuas) displayRuas.textContent = ruas;
+    document.querySelectorAll("#display-morada").forEach(el => {
+      el.textContent = morada;
+    });
 
-        // Build the email subject and body content dynamically
-        const subject = `Caixotes do lixo reviradas em ${rua}`;
-        const body = 
-    `Exmo.(a) Senhor(a) ${destinatario},
+    if (displayDestinatario) displayDestinatario.textContent = destinatario;
+    if (displayFreguesia) displayFreguesia.textContent = freguesia;
+    if (displayNome) displayNome.textContent = nome;
+    if (displayRuas) displayRuas.textContent = ruas;
 
-    Sou residente em ${freguesia} e escrevo por causa dos caixotes do lixo da minha rua.
+    const subject = `Caixotes do lixo reviradas em ${morada}`;
+    const body = 
+`Exmo.(a) Senhor(a) ${destinatario},
 
-    Desde que as embalagens passaram a valer depósito, há pessoas que as procuram dentro do lixo. Não escrevo a pedir multas — é indigno ter de meter as mãos entre resíduos por dez cêntimos. Mas o resultado também é mau para todos: o contentor acaba despejado no passeio e a rua fica pior do que estava.
+Sou residente em ${freguesia} e escrevo por causa dos caixotes do lixo da minha rua.
 
-    Existe uma solução simples, já usada há anos noutros países: o aro, um pequeno suporte em aço que se fixa aos caixotes do lixo já existentes. Quem não quer o reembolso pousa ali a garrafa ou a lata; quem a quer leva-a com a mão, sem tocar no lixo e sem espalhar nada. Está tudo explicado em arourbano.pt.
+Desde que as embalagens passaram a valer depósito, há pessoas que as procuram dentro do lixo. Não escrevo a pedir multas — é indigno ter de meter as mãos entre resíduos por dez cêntimos. Mas o resultado também é mau para todos: o contentor acaba despejado no passeio e a rua fica pior do que estava.
 
-    O meu pedido é simples: que considerem testar aros na nossa cidade. Bastariam os caixotes do lixo da ${ruas} para perceber se resulta. Em arourbano.pt encontram o contacto da equipa, que faz uma visita técnica sem compromisso.
+Existe uma solução simples, já usada há anos noutros países: o aro, um pequeno suporte em aço que se fixa aos caixotes do lixo já existentes. Quem não quer o reembolso pousa ali a garrafa ou a lata; quem a quer leva-a com a mão, sem tocar no lixo e sem espalhar nada. Está tudo explicado em arourbano.pt.
 
-    Agradeço a atenção.
-    ${nome}
-    ${morada}`;
+O meu pedido é simples: que considerem testar aros na nossa cidade. Bastariam os caixotes do lixo da ${ruas} para perceber se resulta. Em arourbano.pt encontram o contacto da equipa, que faz uma visita técnica sem compromisso.
 
-        if (mailtoButton) {
-          mailtoButton.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        }
-      }
+Agradeço a atenção.
+${nome}
+${morada}`;
+
+    if (mailtoButton) {
+      mailtoButton.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  }
 
   [inputMorada, inputDestinatario, inputFreguesia, inputNome, inputRuas].forEach(input => {
     if (input) {
@@ -58,6 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Run once on load to initialize default values
   atualizarCarta();
 });
