@@ -54,69 +54,65 @@
     </div>
   </section>
 
-<section class="seccao seccao--areia">
-  <div class="envolve">
-    <!-- SplitForms Universal Endpoint -->
-    <form class="formulario aparece" action="https://splitforms.com/api/submit" method="POST">
-      
-      <!-- Your unique SplitForms access key -->
-      <input type="hidden" name="access_key" value="26797f101c3b4c2dbe4d86403e5d6fa5">
-      
-      <!-- Custom subject line for your notification emails -->
-      <input type="hidden" name="_subject" value="Novo contacto via arotec.pt">
-      
-      <!-- Honeypot anti-spam field -->
-      <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
+    <section class="seccao seccao--areia">
+      <div class="envolve">
+        <form class="formulario aparece" action="https://splitforms.com/api/submit" method="POST">
 
-      <div class="campo">
-        <label for="nome">Nome</label>
-        <input id="nome" name="nome" type="text" autocomplete="name" required>
+          <input type="hidden" name="access_key" value="26797f101c3b4c2dbe4d86403e5d6fa5">
+
+          <input type="hidden" name="_subject" value="Novo contacto via arotec.pt">
+
+            <input type="text" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
+            
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="campo">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="campo">
+            <label for="perfil">Escrevo em nome de</label>
+            <select id="perfil" name="perfil">
+              <option>Câmara municipal</option>
+              <option>Junta de freguesia</option>
+              <option>Empresa municipal / higiene urbana</option>
+              <option>Instituição social</option>
+              <option>Imprensa</option>
+              <option>Residente</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required
+                      placeholder="Onde está o problema? Que zonas, que caixotes de lixo, que queixas."></textarea>
+          </div>
+
+          <div class="botoes" style="margin-top:.25rem;">
+            <button class="botao botao--acento" type="submit">Enviar</button>
+          </div>
+
+          <p class="nota">
+            Os seus dados são utilizados para responder ao seu contacto. Leia a nossa <a href="/privacidade.html" target="_blank"><strong>Política de Privacidade</strong></a>.
+          </p>
+        </form>
       </div>
+    </section>
 
-      <div class="campo">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required>
-      </div>
-
-      <div class="campo">
-        <label for="perfil">Escrevo em nome de</label>
-        <select id="perfil" name="perfil">
-          <option>Câmara municipal</option>
-          <option>Junta de freguesia</option>
-          <option>Empresa municipal / higiene urbana</option>
-          <option>Instituição social</option>
-          <option>Imprensa</option>
-          <option>Residente</option>
-          <option>Outro</option>
-        </select>
-      </div>
-
-      <div class="campo">
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" required
-                  placeholder="Onde está o problema? Que zonas, que caixotes de lixo, que queixas."></textarea>
-      </div>
-
-      <div class="botoes" style="margin-top:.25rem;">
-        <button class="botao botao--acento" type="submit">Enviar</button>
-      </div>
-
-      <p class="nota">
-        Os seus dados são utilizados para responder ao seu contacto. Leia a nossa <a href="/privacidade.html" target="_blank"><strong>Política de Privacidade</strong></a>.
-      </p>
-    </form>
-  </div>
-</section>
-    
-  <section class="seccao seccao--fundo">
-    <div class="envolve texto">
-      <span class="sobrancelha">Contacto</span>
-      <h2>Prefere escrever diretamente?</h2>
-      <p class="entrada">
-        Pode responder diretamente aqui: <a href="mailto:geral@arourbano.pt">geral@arourbano.pt</a>
-      </p>
-    </div>
-  </section>
+      <section class="seccao seccao--fundo">
+        <div class="envolve texto">
+          <span class="sobrancelha">Contacto</span>
+          <h2>Prefere escrever diretamente?</h2>
+          <p class="entrada">
+            Pode responder diretamente aqui: <a href="mailto:geral@arourbano.pt">geral@arourbano.pt</a>
+          </p>
+        </div>
+      </section>
 
 </main>
 
