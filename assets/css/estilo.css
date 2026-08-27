@@ -1196,7 +1196,7 @@ figure { margin: 0; }
 .garrafa-pequena {
   background-image: url('https://aro100.pages.dev/assets/img/garrafa-pequena.webp');
   animation: floatSlowGarrafaGrande 5s ease-in-out infinite alternate;
-  top: -30%;
+  top: -20%;
   left: -8%;
 }
 .lata-grande {
