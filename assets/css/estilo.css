@@ -370,7 +370,7 @@ strong { font-weight: 700; }
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: cover !important;
 }
 
 .selo {
