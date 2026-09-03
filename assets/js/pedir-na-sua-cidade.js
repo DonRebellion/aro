@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nome = inputNome.value.trim() || "[o seu nome]";
     const ruas = inputRuas.value.trim() || "[rua(s) para teste]";
 
-    // Update ALL elements with id="display-ruas" (both subject line and body reference)
+    // Update ALL elements with id="display-ruas" safely
     document.querySelectorAll("#display-ruas").forEach(el => {
       el.textContent = ruas;
     });
@@ -30,18 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (displayNome) displayNome.textContent = nome;
     if (displayMorada) displayMorada.textContent = morada;
 
-    // Build the email subject (using ruas) and body content dynamically
+    // Build the email subject and body content dynamically matching your HTML text
     const subject = `Caixotes do lixo reviradas em ${ruas}`;
     const body = 
 `Exmo.(a) Senhor(a) ${destinatario},
 
-Sou residente em ${freguesia} e escrevo por causa dos caixotes do lixo da minha rua.
+Sou residente em ${freguesia} e escrevo-lhe a propósito dos caixotes do lixo na minha rua.
 
-Desde que as embalagens passaram a valer depósito, há pessoas que as procuram dentro do lixo. Não escrevo a pedir multas — é indigno ter de meter as mãos entre resíduos por dez cêntimos. Mas o resultado também é mau para todos: o contentor acaba despejado no passeio e a rua fica pior do que estava.
+Desde que as embalagens passaram a ter valor depósito, há pessoas que as procuram dentro do lixo. Não escrevo a pedir multas ou medidas de penalização - escrevo porque não deveria ser necessário colocar as mãos entre resíduos para recuperar dez cêntimos. É indigno para quem o tem de fazer. E esta situação tem consequências para todos: os caixotes do lixo e contentores acabam por ser despejados nos passeios, deixando lixo espalhado e tornando as ruas mais sujas e sujeitas a pragas.
 
-Existe uma solução simples, já usada há anos noutros países: o aro, um pequeno suporte em aço que se fixa aos caixotes do lixo já existentes. Quem não quer o reembolso pousa ali a garrafa ou a lata; quem a quer leva-a com a mão, sem tocar no lixo e sem espalhar nada. Está tudo explicado em arourbano.pt.
+Existe uma solução simples, já usada há anos noutros países: o aro, um pequeno suporte em aço que se fixa aos caixotes do lixo já existentes. Quem não quer o reembolso pode ali deixar a garrafa ou a lata; quem a quiser recolher pode fazê-lo diretamente, sem ter de tocar no lixo nem o espalhar.
 
-O meu pedido é simples: que considerem testar aros na nossa cidade. Bastariam os caixotes do lixo da ${ruas} para perceber se resulta. Em arourbano.pt encontram o contacto da equipa, que faz uma visita técnica sem compromisso.
+O meu pedido é simples: que considerem testar o aro na nossa cidade. Bastaria instalá-lo em alguns caixotes da rua ${ruas} para avaliar se funciona e qual o impacto na limpeza do espaço público.
+
+Pode saber mais sobre a solução em https://arourbano.pt.
 
 Agradeço a atenção.
 ${nome}
